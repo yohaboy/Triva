@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '../static/dist/output.css' %}">
+    <title>Triva</title>
+</head>
+<body>
+    <!-- Main container -->
+    <div class="flex flex-col h-screen m-3 p-4">
+
+        <!-- Top bar -->
+        <section class="flex justify-between w-full h-[50px] items-center gap-5 px-2">
+            <div class="flex">
+                <div class="mr-4"><img src="./temp-image/image.png" class="h-10 w-10 rounded-full"></div>
+                <div class="flex flex-col justify-start">
+                    <div class="text-[16px]">username</div>
+                    <div class="text-[14px]">ID-1235</div>
+                </div>
+            </div>
+            <div class="rounded-lg shadow h-2/3 w-[90px] px-2 py-1 bg-green-400">
+                <h2>500 USDT</h2>
+            </div>
+        </section>
+
+        <!-- Intro text -->
+        <section class="rounded p-3 w-full my-2 h-[150px] text-left bg-blue-300">
+            <p class="font-extrabold text-lg">Test your Knowleddge and get rewarded</p>
+            <div><p>practice questions carefully prepared based on EUEE standards</p></div>
+        </section>
+
+        <!-- categories -->
+        <section class="flex flex-col h-[100px] gap-2">
+            <h3 class="text-lg font-extrabold uppercase">Categories</h3>
+            <div class="flex gap-[10%] h-[50px]">
+                <div class="flex gap-[10%] rounded bg-red-300 w-1/2">
+                    <div><img src="#" class="h-10 w-10 m-1 rounded"></div>
+                    <div class="m-2 text-lg font-bold">Natural</div>
+                </div>
+                <div class="flex gap-[10%] rounded bg-purple-300 w-1/2">
+                    <div><img src="#" class="h-10 w-10 m-1 rounded"></div>
+                    <div class="m-2 text-lg font-bold">Social</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subjects List -->
+        <section class="flex flex-col gap-2 h-2/5">
+            <span class="h-[60px] rounded bg-pink-600">Math</span>
+            <span class="h-[60px] rounded bg-blue-600">Bio</span>
+            <span class="h-[60px] rounded bg-purple-600">phy</span>
+            <span class="h-[60px] rounded bg-red-600">Eng</span>
+            <span class="h-[60px] rounded bg-green-600">Chemo</span>
+        </section>
+
+        <!-- Bottom bar -->
+        <section class="flex justify-between h-[40px] rounded bg-yellow-400 p-2">
+            <span>Home</span>
+            <span>Leadbord</span>
+            <span>Profile</span>
+        </section>
+
+    </div>
+</body>
+</html>
