@@ -4,12 +4,12 @@ from .models import CustomUser
 from .models import CustomManager
 
 class CustomUserAdmin(UserAdmin):
-    list_display = ('username', 'phone_number', 'is_staff', 'is_active')
+    list_display = ('username', 'profile','phone_number','balance', 'is_staff', 'is_active')
     list_filter = ('is_staff', 'is_superuser', 'is_active')
     search_fields = ('username', 'phone_number')
 
     fieldsets = (
-        (None, {'fields': ('phone_number', 'username', 'password')}),
+        (None, {'fields': ('phone_number', 'username', 'password' , 'profile','balance','weekly_rank','monthly_rank')}),
         ('Permissions', {
             'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
         }),

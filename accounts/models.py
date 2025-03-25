@@ -22,6 +22,11 @@ class CustomManager(BaseUserManager):
 class CustomUser(AbstractUser):
     username = models.CharField(max_length=50)
     phone_number = models.CharField(max_length=50 ,unique=True)
+    profile = models.FileField(upload_to="profiles/", blank=True, null=True ,default='profiles/image.png')
+    balance = models.DecimalField(decimal_places=2 ,max_digits=10 ,default=0 ,null=True ,blank=True)
+    weekly_rank = models.PositiveIntegerField(default=0,null=True, blank=True)
+    monthly_rank = models.PositiveIntegerField(default=0,null=True, blank=True)
+    total_point = models.PositiveIntegerField(default=0,null=True, blank=True)
 
     USERNAME_FIELD = "phone_number"
     REQUIRED_FIELDS = ["username"]
