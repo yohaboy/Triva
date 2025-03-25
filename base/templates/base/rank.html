@@ -1,3 +1,5 @@
+{% extends "base/base.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +10,9 @@
     <title>Leadbord</title>
 </head>
 <body>
+    {% block content %}
     <!-- Main container -->
-    <div class="flex flex-col bg-violet-700 gap-4 min-h-screen p-2">
+    <div class="flex flex-col bg-violet-700 gap-4 h-[calc(100vh-50px)] p-2 overflow-auto">
         <section class="flex justify-center items-center text-white font-bold text-xl">Leadboard</section>
 
         <section class="flex justify-center items-center text-center gap-[20%]">
@@ -17,7 +20,7 @@
             <div class="rounded-lg p-[7px] w-[100px] bg-gray-200">Monthly</div>
         </section>
         
-        <section class="p-4 gap-4 flex flex-col rounded-xl bg-gray-200 h-screen">
+        <section class="p-2 m-1 gap-4 flex flex-col rounded-xl bg-gray-200 h-screen">
             <div class="flex justify-between p-2 shadow shadow-purple-600 rounded-xl bg-white">
                 <div> 1. </div>
                 <div><img src="#" class="h-10 w-10 rounded-full"></div>
@@ -29,6 +32,100 @@
                 <div><img src="#" class="h-10 w-10 rounded"></div>
             </div>
         </section>
+
+<!-- dump -->
+        <section class="p-2 m-1 gap-4 flex flex-col rounded-xl bg-gray-200 h-screen">
+            <div class="flex justify-between p-2 shadow shadow-purple-600 rounded-xl bg-white">
+                <div> 1. </div>
+                <div><img src="#" class="h-10 w-10 rounded-full"></div>
+                <div class="flex flex-col gap-2">
+                    <div class="font-bold">Doe</div>
+                    <div class="text-md text-gray-400">2800 points</div>
+                </div>
+                <!-- Medal (for the top 3 only) -->
+                <div><img src="#" class="h-10 w-10 rounded"></div>
+            </div>
+        </section>
+
+        <section class="p-2 m-1 gap-4 flex flex-col rounded-xl bg-gray-200 h-screen">
+            <div class="flex justify-between p-2 shadow shadow-purple-600 rounded-xl bg-white">
+                <div> 1. </div>
+                <div><img src="#" class="h-10 w-10 rounded-full"></div>
+                <div class="flex flex-col gap-2">
+                    <div class="font-bold">Doe</div>
+                    <div class="text-md text-gray-400">2800 points</div>
+                </div>
+                <!-- Medal (for the top 3 only) -->
+                <div><img src="#" class="h-10 w-10 rounded"></div>
+            </div>
+        </section>
+
+        <section class="p-2 m-1 gap-4 flex flex-col rounded-xl bg-gray-200 h-screen">
+            <div class="flex justify-between p-2 shadow shadow-purple-600 rounded-xl bg-white">
+                <div> 1. </div>
+                <div><img src="#" class="h-10 w-10 rounded-full"></div>
+                <div class="flex flex-col gap-2">
+                    <div class="font-bold">Doe</div>
+                    <div class="text-md text-gray-400">2800 points</div>
+                </div>
+                <!-- Medal (for the top 3 only) -->
+                <div><img src="#" class="h-10 w-10 rounded"></div>
+            </div>
+        </section>
+
+        <section class="p-2 m-1 gap-4 flex flex-col rounded-xl bg-gray-200 h-screen">
+            <div class="flex justify-between p-2 shadow shadow-purple-600 rounded-xl bg-white">
+                <div> 1. </div>
+                <div><img src="#" class="h-10 w-10 rounded-full"></div>
+                <div class="flex flex-col gap-2">
+                    <div class="font-bold">Doe</div>
+                    <div class="text-md text-gray-400">2800 points</div>
+                </div>
+                <!-- Medal (for the top 3 only) -->
+                <div><img src="#" class="h-10 w-10 rounded"></div>
+            </div>
+        </section>
+
+        <section class="p-2 m-1 gap-4 flex flex-col rounded-xl bg-gray-200 h-screen">
+            <div class="flex justify-between p-2 shadow shadow-purple-600 rounded-xl bg-white">
+                <div> 1. </div>
+                <div><img src="#" class="h-10 w-10 rounded-full"></div>
+                <div class="flex flex-col gap-2">
+                    <div class="font-bold">Doe</div>
+                    <div class="text-md text-gray-400">2800 points</div>
+                </div>
+                <!-- Medal (for the top 3 only) -->
+                <div><img src="#" class="h-10 w-10 rounded"></div>
+            </div>
+        </section>
+
+        <section class="p-2 m-1 gap-4 flex flex-col rounded-xl bg-gray-200 h-screen">
+            <div class="flex justify-between p-2 shadow shadow-purple-600 rounded-xl bg-white">
+                <div> 1. </div>
+                <div><img src="#" class="h-10 w-10 rounded-full"></div>
+                <div class="flex flex-col gap-2">
+                    <div class="font-bold">Doe</div>
+                    <div class="text-md text-gray-400">2800 points</div>
+                </div>
+                <!-- Medal (for the top 3 only) -->
+                <div><img src="#" class="h-10 w-10 rounded"></div>
+            </div>
+        </section>
+
+        <section class="p-2 m-1 gap-4 flex flex-col rounded-xl bg-gray-200 h-screen">
+            <div class="flex justify-between p-2 shadow shadow-purple-600 rounded-xl bg-white">
+                <div> 1. </div>
+                <div><img src="#" class="h-10 w-10 rounded-full"></div>
+                <div class="flex flex-col gap-2">
+                    <div class="font-bold">Doe</div>
+                    <div class="text-md text-gray-400">2800 points</div>
+                </div>
+                <!-- Medal (for the top 3 only) -->
+                <div><img src="#" class="h-10 w-10 rounded"></div>
+            </div>
+        </section>
+<!-- dump -->
     </div>
+    {% endblock %}
 </body>
 </html>
