@@ -12,8 +12,8 @@ class QuizModel(models.Model):
         ('natural','natural'),
         ('social','social')
     ]
-    stream = models.CharField(choices=streams ,default='natural')
-    category = models.CharField(choices=subjects)
+    stream = models.CharField(max_length=255 ,choices=streams ,default='natural')
+    category = models.CharField(max_length= 255 ,choices=subjects)
     questionSize = models.PositiveIntegerField()
     duration = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now=True)

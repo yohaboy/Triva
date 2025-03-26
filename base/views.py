@@ -9,20 +9,15 @@ def home(request):
         quizList = QuizModel.objects.filter(stream__icontains=query)
     else :
         quizList = QuizModel.objects.filter(stream__icontains = 'natural')
-
     context = {'quizList':quizList}
-    
     return render(request , "base/index.html" , context = context)
 
-def quizPage(request,id):
-    
+def quizPage(request,id): 
     quiz = get_object_or_404(QuizModel, id=id)
     questionList = QuestionModel.objects.filter(quiz=quiz).prefetch_related("choices")
-
     context = {
         'questionList':questionList,
-         }
-    
+         }  
     return render(request ,'base/quiz.html', context=context)
 
 def rank(request):

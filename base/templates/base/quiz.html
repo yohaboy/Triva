@@ -1,12 +1,47 @@
+{% extends "base/base.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '../static/dist/output.css' %}">
     <title></title>
 </head>
 <body>
-    {% for question in questionList %}
+    {% block content %}
+    <!-- main container -->
+    <div class="flex flex-col h-[calc(100vh-50px)] mx-3 mt-3 rounded-xl rounded-br-none rounded-bl-none bg-white gap-2 p-2">
+        <div class=" rounded-xl text-center font-bold h-[40px]">7/10</div>
+    
+        <div class="flex justify-center items-center">
+            <div class="flex items-center justify-center rounded-full mb-2 bg-green-300 h-[60px] w-[60px]">30</div>
+        </div>
+
+        <!-- question box -->
+        <div class="h-[200px] rounded-xl bg-white shadow-md mb-10 p-4 shadow-purple-500">
+            Q goes here
+        </div>
+        <!-- choices box -->
+
+        <div class="flex justify-between items-center mb-2 p-3 bg-gray-100 shadow shadow-purple-600 rounded-xl h-[50px]">
+            <h3>2000</h3>
+            <input type="checkbox" class="h-4 w-4">
+        </div>
+
+        <div class="flex justify-center items-center p-3 bg-green-400 rounded-xl mt-10 h-[45px]">
+            <h3>Next</h3>
+        </div>
+    </div>
+
+    {% endblock %}
+</body>
+</html>
+
+
+
+
+    <!-- {% for question in questionList %}
         <div class="p-4 border-b">
             <p class="font-bold">{{ question.question }}</p>
             <ul>
@@ -17,6 +52,4 @@
         </div>
     {% empty %}
         <p>No questions available.</p>
-    {% endfor %}
-</body>
-</html>
+    {% endfor %} -->
