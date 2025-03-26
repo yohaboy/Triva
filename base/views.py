@@ -9,20 +9,20 @@ def home(request):
         quizList = QuizModel.objects.filter(stream__icontains=query)
     else :
         quizList = QuizModel.objects.filter(stream__icontains = 'natural')
-        
+
     context = {'quizList':quizList}
     
     return render(request , "base/index.html" , context = context)
 
-def quizPage(request):
+def quizPage(request , id):
     
-    quiz = QuizModel.objects.get()
+    quiz = QuizModel.objects.get(id = id)
     questionList = quiz.questions.all()
-    choices = questionList.choices.all()
+    # choices = questionList.choices.all()
 
     context = {
         'questionList':questionList,
-        'choices':choices
+        # 'choices':choices
          }
     
     return render(request ,'base/quiz.html', context=context)
