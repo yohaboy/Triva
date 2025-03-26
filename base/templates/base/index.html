@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="rounded-lg shadow h-2/3 w-[90px] px-2 py-1 bg-green-400">
-                <h2>500 USDT</h2>
+                <h2>{{ request.user.balance }} ETB</h2>
             </div>
         </section>
 
@@ -36,25 +36,30 @@
         <section class="flex flex-col h-[100px] gap-2">
             <h3 class="text-[14px] font-extrabold uppercase">Categories </h3>
             <div class="flex gap-[10%] h-[50px]">
-                <div class="flex gap-[10%] shadow shadow-green-600 rounded bg-green-300 w-1/2">
-                    <div><img src="#" class="h-10 w-10 m-1 rounded justify-center items-center"></div>
+                <form method="get" name="natural" class="flex gap-[10%] shadow shadow-green-600 rounded bg-green-300 w-1/2">
+                    <div><img src="{% static '../static/images/natural.png' %}" class="h-10 w-10 m-1 rounded justify-center items-center"></div>
                     <div class="m-2 text-lg font-bold">Natural</div>
-                </div>
-                <div class="flex gap-[10%] rounded shadow bg-blue-300 shadow-blue-600 w-1/2">
-                    <div><img src="#" class="h-10 w-10 m-1 rounded justify-center items-center"></div>
+                </form>
+                <form method="get" name="social" class="flex gap-[10%] rounded shadow bg-blue-300 shadow-blue-600 w-1/2">
+                    <div><img src="{% static '../static/images/social.png' %}" class="h-10 w-10 m-1 rounded justify-center items-center"></div>
                     <div class="m-2 text-lg font-bold">Social</div>
-                </div>
+                </form>
             </div>
         </section>
 
         <!-- Subjects List -->
         <section class="flex flex-col gap-3 h-2/5">
             <!-- subject 1 -->
+            {% for quiz in quizList %}
+
             <span class="h-[60px] rounded-xl shadow shadow-purple-600">
                 <div class="flex justify-between">
-                    <div class="flex justify-center items-center gap-1 m-2 font-bold">
-                        <img src="#" class="h-8 w-8 rounded">
-                        <h3>English</h3>
+                    <div class="flex justify-center items-center gap-2 m-2 font-bold">
+                        <img src="{% static '../static/images/book.png' %}" class="h-8 w-8 rounded">
+                        <div class="flex flex-col">
+                            <h3>{{ quiz.category }}</h3>
+                            <h4 class="text-gray-400 text-[12px]">{{ quiz.questionSize }} Questions</h4>
+                        </div>
                     </div>
                     <div class="flex gap-5 m-1 text-[12px]">
                         <span class="flex mt-2 gap-1 items-center rounded px-2 bg-blue-300">
@@ -65,22 +70,8 @@
                     </div>
                 </div>
             </span>
-            <!-- subject 2 -->
-            <span class="h-[60px] rounded-xl shadow shadow-purple-600">
-                <div class="flex justify-between">
-                    <div class="flex justify-center items-center gap-1 m-2 font-bold">
-                        <img src="#" class="h-8 w-8 rounded">
-                        <h3>English</h3>
-                    </div>
-                    <div class="flex gap-5 m-1 text-[12px]">
-                        <span class="flex mt-2 gap-1 items-center rounded px-2 bg-blue-300">
-                            <div>Pay</div>
-                            <div>5ETB</div>
-                        </span>
-                        <span class="flex items-center font-bold mt-3 h-1/2 rounded px-2 bg-gray-300"><h4>00:00:20</h4></span>
-                    </div>
-                </div>
-            </span>
+
+            {% endfor %}
 
         </section>
     </div>
