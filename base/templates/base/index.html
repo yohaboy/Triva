@@ -36,14 +36,21 @@
         <section class="flex flex-col h-[100px] gap-2">
             <h3 class="text-[14px] font-extrabold uppercase">Categories </h3>
             <div class="flex gap-[10%] h-[50px]">
-                <form method="get" name="natural" class="flex gap-[10%] shadow shadow-green-600 rounded bg-green-300 w-1/2">
-                    <div><img src="{% static '../static/images/natural.png' %}" class="h-10 w-10 m-1 rounded justify-center items-center"></div>
-                    <div class="m-2 text-lg font-bold">Natural</div>
+                <form method="get" action="{% url 'home' %}" class="flex gap-[10%] shadow shadow-green-600 rounded bg-green-300 w-1/2">
+                    <input type="hidden" name="query" value="natural">
+                    <button type="submit" class="flex items-center w-full p-2">
+                        <div><img src="{% static '../static/images/natural.png' %}" class="h-10 w-10 m-1 rounded"></div>
+                        <div class="m-2 text-lg font-bold">Natural</div>
+                    </button>
                 </form>
-                <form method="get" name="social" class="flex gap-[10%] rounded shadow bg-blue-300 shadow-blue-600 w-1/2">
-                    <div><img src="{% static '../static/images/social.png' %}" class="h-10 w-10 m-1 rounded justify-center items-center"></div>
-                    <div class="m-2 text-lg font-bold">Social</div>
-                </form>
+                
+                <form method="get" action="{% url 'home' %}" class="flex gap-[10%] shadow shadow-blue-600 rounded bg-blue-300 w-1/2">
+                    <input type="hidden" name="query" value="social">
+                    <button type="submit" class="flex items-center w-full p-2">
+                        <div><img src="{% static '../static/images/social.png' %}" class="h-10 w-10 m-1 rounded"></div>
+                        <div class="m-2 text-lg font-bold">Social</div>
+                    </button>
+                </form>                
             </div>
         </section>
 

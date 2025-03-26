@@ -4,7 +4,12 @@ from django.views.generic import CreateView ,ListView
 from .models import QuizModel,QuestionModel,ChoiceModel
 
 def home(request):
-    quizList = QuizModel.objects.all()
+    query = request.GET.get('query')
+    if query:
+        quizList = QuizModel.objects.filter(stream__icontains=query)
+    else :
+        quizList = QuizModel.objects.filter(stream__icontains = 'natural')
+        
     context = {'quizList':quizList}
     
     return render(request , "base/index.html" , context = context)
