@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView ,ListView
 from .models import QuizModel,QuestionModel,ChoiceModel
@@ -14,15 +14,13 @@ def home(request):
     
     return render(request , "base/index.html" , context = context)
 
-def quizPage(request , id):
+def quizPage(request,id):
     
-    quiz = QuizModel.objects.get(id = id)
-    questionList = quiz.questions.all()
-    # choices = questionList.choices.all()
+    quiz = get_object_or_404(QuizModel, id=id)
+    questionList = QuestionModel.objects.filter(quiz=quiz).prefetch_related("choices")
 
     context = {
         'questionList':questionList,
-        # 'choices':choices
          }
     
     return render(request ,'base/quiz.html', context=context)

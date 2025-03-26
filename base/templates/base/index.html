@@ -60,7 +60,7 @@
             {% for quiz in quizList %}
 
             <span class="h-[60px] rounded-xl shadow shadow-purple-600">
-                <div class="flex justify-between">
+                <a href="{% url 'quiz' quiz.id %}" class="flex justify-between">
                     <div class="flex justify-center items-center gap-2 m-2 font-bold">
                         <img src="{% static '../static/images/book.png' %}" class="h-8 w-8 rounded">
                         <div class="flex flex-col">
@@ -75,7 +75,7 @@
                         </span>
                         <span class="flex items-center font-bold mt-3 h-1/2 rounded px-2 bg-gray-300"><h4>00:00:20</h4></span>
                     </div>
-                </div>
+                </a>
             </span>
 
             {% endfor %}
