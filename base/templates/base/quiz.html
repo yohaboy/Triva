@@ -11,14 +11,14 @@
 <body>
     {% block content %}
     <!-- main container -->
-    <div class="flex flex-col h-[calc(100vh-50px)] mx-3 mt-3 rounded-xl bg-white gap-2 p-2">
+    <div class="flex flex-col h-[calc(100vh-50px)] mx-3 mt-3 rounded-xl bg-white gap-1 p-2">
         <div id="progress" class="rounded-xl text-center font-bold h-[40px]">Loading...</div>
     
         <div class="flex justify-center items-center">
             <div class="flex items-center justify-center rounded-full bg-green-300 h-[60px] w-[60px]">30</div>
         </div>
     
-        <div id="questionBox" class="h-[200px] rounded-xl bg-white shadow-md mb-10 p-4 shadow-purple-500">
+        <div id="questionBox" class="h-[180px] rounded-xl bg-white shadow-md mb-10 p-4 shadow-purple-500">
             Loading questions...
         </div>
     
@@ -32,7 +32,7 @@
     <script>
         let questions = [];
         let currentQuestion = 0;
-        const quizId = 2; 
+        const quizId = "{{ quiz_id }}"; 
 
         function fetchQuestions() {
             fetch(`/quizApi/${quizId}`)
@@ -61,8 +61,7 @@
                 choicesContainer.appendChild(div);
             });
         }
-        
-        
+                
         document.getElementById("nextBtn").addEventListener("click", () => {
             if (currentQuestion < questions.length - 1) {
                 currentQuestion++;
@@ -78,19 +77,3 @@
     {% endblock %}
 </body>
 </html>
-
-
-
-
-    <!-- {% for question in questionList %}
-        <div class="p-4 border-b">
-            <p class="font-bold">{{ question.question }}</p>
-            <ul>
-                {% for choice in question.choices.all %}
-                    <li class="ml-4">{{ choice.choice }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% empty %}
-        <p>No questions available.</p>
-    {% endfor %} -->
