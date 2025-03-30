@@ -10,17 +10,17 @@
 <body class="bg-violet-700">
     {% block content %}
     {% endblock %}
-    <section class="flex justify-between mx-3 h-[50px] rounded-bl-xl rounded-br-xl shadow bg-gray-400 p-2">
-        <a href="{% url 'home' %}" class="flex flex-col items-center justify-center bg-green-300 p-4 rounded-xl ">
-            <img src="#" class="h-[12px] w-[12px]">
+    <section class="flex justify-between mx-3 h-[60px] rounded-bl-xl rounded-br-xl bg-gray-100 p-2">
+        <a href="{% url 'home' %}" class="flex flex-col shadow-lg shadow-blue-500 items-center justify-center  p-4 rounded-xl ">
+            <img src="{% static '../static/images/home.png' %}" class="h-[12px] w-[12px]">
             <h3 class="text-[12px]">Home</h3>
         </a>
-        <a href="{% url 'rank' %}" class="flex flex-col items-center justify-center bg-green-300 p-4 rounded-xl ">
-            <img src="#" class="h-[12px] w-[12px]">
+        <a href="{% url 'rank' %}" class="flex flex-col shadow-lg shadow-blue-500 items-center justify-center  p-4 rounded-xl ">
+            <img src="{% static '../static/images/rank.png' %}" class="h-[12px] w-[12px]">
             <h3 class="text-[12px]">Leaders</h3>
         </a>
-        <a href="{% url 'profile' %}" class="flex flex-col items-center justify-center bg-green-300 p-4 rounded-xl ">
-            <img src="#" class="h-[12px] w-[12px]">
+        <a href="{% url 'profile' %}" class="flex flex-col shadow-lg shadow-blue-500 items-center justify-center p-4 rounded-xl ">
+            <img src="{% static '../static/images/image.png' %}" class="h-[12px] w-[12px]">
             <h3 class="text-[12px]">Profile</h3>
         </a>
     </section>
