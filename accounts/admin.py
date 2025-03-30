@@ -9,7 +9,7 @@ class CustomUserAdmin(UserAdmin):
     search_fields = ('username', 'phone_number')
 
     fieldsets = (
-        (None, {'fields': ('phone_number', 'username', 'password' , 'profile','balance','weekly_rank','monthly_rank')}),
+        (None, {'fields': ('phone_number', 'username', 'password' , 'profile','balance','weekly_rank','monthly_rank','total_point')}),
         ('Permissions', {
             'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
         }),

@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView ,ListView
 from .models import QuizModel,QuestionModel,ChoiceModel
+from accounts.models import CustomUser
 
 def home(request):
     query = request.GET.get('query')
@@ -36,7 +37,13 @@ def quizApi(request,id):
 
 
 def rank(request):
-    return render(request , "base/rank.html")
+    top_players = CustomUser.objects.all().order_by('-total_point')
+
+    context = {
+        'top_players':top_players
+    }
+
+    return render(request , "base/rank.html" ,context=context)
 
 def profile(request):
     return render(request , 'base/profile.html')
